@@ -36,14 +36,24 @@ void ARM_STM32_USART_Init_Pins(uint8_t usart_num, uint8_t usart_gpio_speed)
 		{
 			gpio.GPIO_Mode = GPIO_Mode_AF_PP;
 			gpio.GPIO_Speed = (GPIOSpeed_TypeDef)usart_gpio_speed;
-			gpio.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9;
+			gpio.GPIO_Pin = GPIO_Pin_9;
+			GPIO_Init(GPIOA, &gpio);
+			
+			gpio.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+			gpio.GPIO_Speed = (GPIOSpeed_TypeDef)usart_gpio_speed;
+			gpio.GPIO_Pin = GPIO_Pin_10;
 			GPIO_Init(GPIOA, &gpio);
 		}
 		else if (usart_num == ARM_STM32_USART_PERIPHERAL_USART2)
 		{
 			gpio.GPIO_Mode = GPIO_Mode_AF_PP;
 			gpio.GPIO_Speed = (GPIOSpeed_TypeDef)usart_gpio_speed;
-			gpio.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3;
+			gpio.GPIO_Pin = GPIO_Pin_2;
+			GPIO_Init(GPIOA, &gpio);
+			
+			gpio.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+			gpio.GPIO_Speed = (GPIOSpeed_TypeDef)usart_gpio_speed;
+			gpio.GPIO_Pin = GPIO_Pin_3;
 			GPIO_Init(GPIOA, &gpio);
 		}
 	#endif
