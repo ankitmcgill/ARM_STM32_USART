@@ -20,6 +20,7 @@
 *		(1) www.edn.com/electronics-blogs/embedded-basics/4440395/USART-vs-UART--Know-the-difference
 *		(2) http://forum.micromouseonline.com/index.php?topic=460.0
 * ***********************************************************************/
+
 #include "ARM_STM32_USART.h"
 
 void ARM_STM32_USART_Init_Pins(uint8_t usart_num, uint8_t usart_gpio_speed)
@@ -263,6 +264,55 @@ void ARM_STM32_USART_Send_String_Reversed(uint8_t usart_num, uint16_t* str, uint
 	#endif
 }
 
+void ARM_STM32_USART_Send_Char_Usart1(uint16_t data)
+{
+	ARM_STM32_USART_Send_Char(ARM_STM32_USART_PERIPHERAL_USART1, data);
+}
+
+void ARM_STM32_USART_Send_String_Usart1(uint16_t* str, uint8_t len)
+{
+	ARM_STM32_USART_Send_String(ARM_STM32_USART_PERIPHERAL_USART1, str, len);
+}
+
+void ARM_STM32_USART_Send_Char_Reversed_Usart1(uint16_t data, uint8_t bit_len)
+{
+	ARM_STM32_USART_Send_Char_Reversed(ARM_STM32_USART_PERIPHERAL_USART1, data, bit_len);
+}
+
+void ARM_STM32_USART_Send_String_Reversed_Usart1(uint16_t* str, uint8_t len, uint8_t bit_len)
+{
+	ARM_STM32_USART_Send_String_Reversed(ARM_STM32_USART_PERIPHERAL_USART1, str, len, bit_len);
+}
+
+uint16_t ARM_STM32_USART_Get_Char_Usart1(void)
+{
+	return ARM_STM32_USART_Get_Char(ARM_STM32_USART_PERIPHERAL_USART1);
+}
+
+void ARM_STM32_USART_Send_Char_Usart2(uint16_t data)
+{
+	ARM_STM32_USART_Send_Char(ARM_STM32_USART_PERIPHERAL_USART2, data);
+}
+
+void ARM_STM32_USART_Send_String_Usart2(uint16_t* str, uint8_t len)
+{
+	ARM_STM32_USART_Send_String(ARM_STM32_USART_PERIPHERAL_USART2, str, len);
+}
+
+void ARM_STM32_USART_Send_Char_Reversed_Usart2(uint16_t data, uint8_t bit_len)
+{
+	ARM_STM32_USART_Send_Char_Reversed(ARM_STM32_USART_PERIPHERAL_USART2, data, bit_len);
+}
+
+void ARM_STM32_USART_Send_String_Reversed_Usart2(uint16_t* str, uint8_t len, uint8_t bit_len)
+{
+	ARM_STM32_USART_Send_String_Reversed(ARM_STM32_USART_PERIPHERAL_USART2, str, len, bit_len);
+}
+
+uint16_t ARM_STM32_USART_Get_Char_Usart2(void)
+{
+	return ARM_STM32_USART_Get_Char(ARM_STM32_USART_PERIPHERAL_USART2);
+}
 
 void ARM_STM32_USART_Deinit(uint8_t usart_num)
 {

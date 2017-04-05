@@ -92,7 +92,20 @@ void ARM_STM32_USART_Send_String(uint8_t usart_num, uint16_t* str, uint8_t len);
 void ARM_STM32_USART_Send_Char_Reversed(uint8_t usart_num, uint16_t data, uint8_t bit_len);
 void ARM_STM32_USART_Send_String_Reversed(uint8_t usart_num, uint16_t* str, uint8_t len, uint8_t bit_len);
 uint16_t ARM_STM32_USART_Get_Char(uint8_t usart_num);
-uint16_t ARM_STM32_USART_Send_Get_Data(uint8_t spi_num, uint16_t data);
+
+//USART 1 SPECIFIC
+void ARM_STM32_USART_Send_Char_Usart1(uint16_t data);
+void ARM_STM32_USART_Send_String_Usart1(uint16_t* str, uint8_t len);
+void ARM_STM32_USART_Send_Char_Reversed_Usart1(uint16_t data, uint8_t bit_len);
+void ARM_STM32_USART_Send_String_Reversed_Usart1(uint16_t* str, uint8_t len, uint8_t bit_len);
+uint16_t ARM_STM32_USART_Get_Char_Usart1(void);
+
+//USART 2 SPECIFIC
+void ARM_STM32_USART_Send_Char_Usart2(uint16_t data);
+void ARM_STM32_USART_Send_String_Usart2(uint16_t* str, uint8_t len);
+void ARM_STM32_USART_Send_Char_Reversed_Usart2(uint16_t data, uint8_t bit_len);
+void ARM_STM32_USART_Send_String_Reversed_Usart2(uint16_t* str, uint8_t len, uint8_t bit_len);
+uint16_t ARM_STM32_USART_Get_Char_Usart2(void);
 
 void ARM_STM32_USART_Deinit(uint8_t usart_num);
 
